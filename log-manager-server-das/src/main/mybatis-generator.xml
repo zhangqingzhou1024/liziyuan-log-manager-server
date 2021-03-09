@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 执行生成代码命令
+      1. 进入 log-manager-server-das 目录
+      2. 配置好 '数据驱动' 和 '表信息', 每次执行一张表
+      3. 执行命令
+      java -jar D:\git\repository2\org\mybatis\generator\mybatis-generator-core\1.3.7\mybatis-generator-core-1.3.7.jar -configfile D:\idea\project\liziyuan-log-manager-server\log-manager-server-das\src\main\mybatis-generator.xml -overwrite
+      -->
+    <!-- 数据库驱动包位置
+    <classPathEntry location="D:\git\repository2\org\mybatis\generator\mybatis-generator-core\1.3.7\postgresql-42.2.5.jar" />
+-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 为sql关键字添加分隔符 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://127.0.0.1:5432/sys_log_manager" userId="postgres"
+                        password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.liziyuan.hope.log.manager.das.entity" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成的映射文件包名和位置 -->
+        <sqlMapGenerator targetPackage="mybatis" targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.liziyuan.hope.log.manager.das.mapper"
+                             targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <table tableName="user_operate_log" domainObjectName="UserOperateLog"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" delimitIdentifiers="true" delimitAllColumns="true">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

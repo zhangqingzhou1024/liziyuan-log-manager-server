@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>liziyuan-log-manager-server</artifactId>
+		<groupId>com.liziyuan.hope</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>log-manager-server-service</artifactId>
+	<name>log-manager-server-service</name>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.liziyuan.hope</groupId>
+			<artifactId>log-manager-server-das</artifactId>
+			<version>${log.manager.version}</version>
+		</dependency>
+	</dependencies>
+</project>

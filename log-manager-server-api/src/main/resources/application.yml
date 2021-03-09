@@ -1,0 +1,43 @@
+## 服务基本配置
+server:
+  port: 8080
+  servlet:
+    context-path: /log-manager-server
+
+spring:
+  application:
+    info:
+      description: 日志管理服务API
+      title: LogManagerServerAPI
+      version: 1.0.0
+    name: LogManagerServer
+  ## 数据源配置
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/sys_log_manager
+    username: postgres
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    schema: classpath:script/*-postgresql.sql
+  ## Kafka配置
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      auto-offset-reset: earliest
+      group-id: liziyuan-user-operate-log-consumer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logstash:
+  log:
+    kafka:
+      topic:
+        name: liziyuan-sys-log-logstash-topic
