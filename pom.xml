@@ -30,6 +30,7 @@
 		<skip.it.report>true</skip.it.report>
 		<maven.test.skip>true</maven.test.skip>
 		<swagger.version>2.9.2</swagger.version>
+		<elstic.version>5.4.1</elstic.version>
 	</properties>
 
 	<modules>
@@ -39,7 +40,8 @@
 		<module>log-manager-server-api</module>
 		<module>log-manager-server-collector</module>
 		<module>log-manager-server-processor</module>
-	</modules>
+        <module>log-manager-server-elastic</module>
+    </modules>
 	<distributionManagement>
 		<repository>
 			<id>maven-dataplatform-releases</id>
