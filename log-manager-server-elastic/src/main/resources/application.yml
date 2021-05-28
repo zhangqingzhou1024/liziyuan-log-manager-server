@@ -2,6 +2,6 @@ spring:
   data:
       elasticsearch:
         cluster-nodes: 127.0.0.1:9300
-        cluster-name: liziyuan-log-nodes
+        cluster-name: docker-cluster
         repositories:
           enabled: true

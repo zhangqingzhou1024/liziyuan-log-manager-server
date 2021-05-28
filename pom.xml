@@ -30,7 +30,7 @@
 		<skip.it.report>true</skip.it.report>
 		<maven.test.skip>true</maven.test.skip>
 		<swagger.version>2.9.2</swagger.version>
-		<elstic.version>5.4.1</elstic.version>
+		<elastic.version>6.5.1</elastic.version>
 	</properties>
 
 	<modules>
